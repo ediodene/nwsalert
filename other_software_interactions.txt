@@ -1,0 +1,21 @@
+Other software interactions;
+
+NWS Web Servers
+	
+	Find your NWS Office's HWO statement and customize the script to download theirs to parse.  There may be variations of
+	the wordings so watch how they cycle through Spotter Activation Needs.
+
+SSMTP + google e-mail account
+
+	This setup requires the SSMTP package to be loaded and configured with your own e-mail address.
+	Google has made security changes to their systems that require registration of applications to 
+	increase security using imap and TLS.  Be sure to set that up with your e-mail account.  Obviously
+	I will NOT publish thta here.
+
+CRON
+
+	Runs the script several times a day at a schedule that you setup using CRON
+
+FESTIVAL
+
+	Reads the text results to the PI's audio out jack so that you can hear it / pipe it to a repeater / etc...
