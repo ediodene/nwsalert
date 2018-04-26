@@ -4,7 +4,7 @@
 #Information is parsed from the published Hazerdous Weather Outlook text product via the internet and depending on the input will
 #output an e-mail alert and read a statement via the PI's audio output jack for alerting those interested to check it out for increased awareness
 #and appropriate action.
-#Note the absolute paths used as well.  This script was designed on a Raspbian Platform for a RPi as the pi user.  You may have to adjust for you platforms as appropriate,
+#Note the absolute paths used as well.  This script was designed on a Raspbian Platform for a RPi as the pi user.  You may have to adjust for you platforms as appropriate, or use ./ relative paths instead.
 #Other software interactions are with SSMTP, an external e-mail account, cron to run it several times a day and festival, to read text to speach 
 #over a repeater using the PI's output 
 
