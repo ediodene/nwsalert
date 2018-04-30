@@ -10,7 +10,9 @@ SSMTP + google e-mail account
 	This setup requires the SSMTP package to be loaded and configured with your own e-mail address.
 	Google has made security changes to their systems that require registration of applications to 
 	increase security using imap and TLS.  Be sure to set that up with your e-mail account.  Obviously
-	I will NOT publish that here.
+	I will NOT publish that here. I have provided scrubbed examples of the config files that are found
+	in /etc/ssmtp for refference.  More information at https://support.google.com on setting up apps
+	and devices to sent e-mail using google's relays in a more secure manner.
 
 CRON
 
@@ -19,3 +21,4 @@ CRON
 FESTIVAL
 
 	Reads the text results to the PI's audio out jack so that you can hear it / pipe it to a repeater / etc...
+
