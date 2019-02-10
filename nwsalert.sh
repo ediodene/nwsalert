@@ -17,16 +17,18 @@ curl -o /home/pi/nwsalert/nwslix "https://forecast.weather.gov/product.php?site=
 
 # Parse local file for spotter activation string and send e-mail with link if "Spotter activation is not" does not exist.
 declare file="/home/pi/nwsalert/nwslix"
-declare regex="\s+Spotter activation is not\s+"
+#declare regex="\s+Spotter activation is not\s+"
+declare regex="\s+activation will not\s+"
+
 
 declare file_content=$( cat "${file}" )
 if [[ " $file_content " =~ $regex ]] # please note the space before and after the file content
 	then
 		echo $'\r'
 		echo "$TODAY - Spotter activation is not anticipated." >/var/www/html/nwsalert/nwsalert.html
-                echo "Ey,  This is the K eey 5 Q K R  Raspberry Pi Spotter Activation Statement reader application for Skywarn volunteers,  As of now, Spotter activation is not anticipated, 7 3 from k eey 5 q k r"  | festival --tts
+#               echo "Ey,  This is the K eey 5 Q K R  Raspberry Pi Spotter Activation Statement reader application for Skywarn volunteers,  As of now, Spotter activation is not anticipated, 7 3 from k eey 5 q k r"  | festival --tts
     	else
         	mail -s "Spotter Activation" ke5qkr@ke5qkr.org <<< "Spotter activation may be needed, please review the details at the link; https://forecast.weather.gov/product.php?site=NWS&product=HWO&issuedby=LIX"
-                echo "This is the K eey 5 Q K R Raspberry Pi spotter activation reader application, Activation may be needed, please check the National Weather Service New Orleans website Hazerdous Weather Outlook for more details." | festival --tts
-		echo "$TODAY - Spotter activation may be needed, please review the deatils at the link; https://forecast.weather.gov/product.php?site=NWS&product=HWO&issuedby=uedby=LIX" >/var/www/html/nwsalert.html
+#               echo "This is the K eey 5 Q K R Raspberry Pi spotter activation reader application, Activation may be needed, please check the National Weather Service New Orleans website Hazerdous Weather Outlook for more details." | festival --tts
+		echo "$TODAY - Spotter activation may be needed." >/var/www/html/nwsalert/nwsalert.html
 fi
